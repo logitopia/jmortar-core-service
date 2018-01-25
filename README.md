@@ -1,2 +1,2 @@
 # jmortar-core-service
-A library that takes care of managing SAAS and Microservice
+A library that takes care of creating SAAS Services and Microservices
