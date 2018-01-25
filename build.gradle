@@ -1,0 +1,87 @@
+/*
+ *     JMortar - Tools to make your Java life easier.
+ *     Copyright (C) 2015-2018 Stephen Cheesley
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
+    }
+}
+
+apply plugin: 'java-library'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'com.logitopia'
+version = '1.0.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+    pkg {
+        repo = 'jmortar-release'
+        name = 'jmortar-core-object'
+        userOrg = 'logitopia'
+        publications = ['publishToBintray']
+    }
+    publish = true
+}
+
+repositories {
+    maven {
+        url "http://repo.maven.apache.org/maven2"
+    }
+    maven {
+        url  "https://dl.bintray.com/logitopia/jmortar-release"
+    }
+
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.25'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'org.springframework', name: 'spring-context', version:'4.3.8.RELEASE'
+}
+
+publishing {
+    publications {
+        publishToBintray(MavenPublication) {
+            from components.java
+            groupId 'com.logitopia'
+            artifactId 'jmortar-core-service'
+            version version
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+
