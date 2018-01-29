@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapResourceManagerImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jmortar-core-service</a> &gt; <a href="index.source.html" class="el_package">com.logitopia.jmortar.core.service.util.impl</a> &gt; <span class="el_source">MapResourceManagerImpl.java</span></div><h1>MapResourceManagerImpl.java</h1><pre class="source lang-java linenums">/*
+ *     JMortar - Tools to make your Java life easier.
+ *     Copyright (C) 2015-2018 Stephen Cheesley
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+package com.logitopia.jmortar.core.service.util.impl;
+
+import com.logitopia.jmortar.core.service.util.MapResourceManager;
+import java.util.HashMap;
+import java.util.Map;
+import org.apache.log4j.Logger;
+
+/**
+ * The &lt;tt&gt;MapResourceManagerImpl&lt;/tt&gt; class is an implementation that ...(TODO)
+ *
+ * @author &amp;lt;Stephen Cheesley stephen.cheesley@gmail.com&amp;gt;
+ */
+public class MapResourceManagerImpl&lt;K, T&gt;
+        extends AbstractResourceManager&lt;Map&lt;K, T&gt;&gt;
+        implements MapResourceManager&lt;K, T&gt; {
+
+  /**
+   * The logger for this class.
+   */
+<span class="fc" id="L37">  public static final Logger LOG</span>
+<span class="fc" id="L38">          = Logger.getLogger(MapResourceManagerImpl.class);</span>
+
+  /**
+   * Creates an instance of the &lt;tt&gt;MapResourceManagerImpl&lt;/tt&gt; class with a
+   * default &lt;tt&gt;java.util.HashMap&lt;/tt&gt; implementation.
+   */
+<span class="fc" id="L44">  public MapResourceManagerImpl() {</span>
+<span class="fc" id="L45">    setResource(new HashMap&lt;K, T&gt;());</span>
+<span class="fc" id="L46">  }</span>
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public T addResource(K key, T newResource) {
+    T result;
+<span class="fc" id="L54">    Map&lt;K, T&gt; resourceMap = getResource();</span>
+<span class="fc" id="L55">    result = resourceMap.put(key, newResource);</span>
+<span class="fc" id="L56">    return result;</span>
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public T removeResource(K key) {
+    T result;
+<span class="fc" id="L65">    Map&lt;K, T&gt; resourceMap = getResource();</span>
+<span class="fc" id="L66">    result = resourceMap.remove(key);</span>
+<span class="fc" id="L67">    return result;</span>
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void clearResources() {
+<span class="fc" id="L75">    Map&lt;K, T&gt; resourceMap = getResource();</span>
+<span class="fc" id="L76">    resourceMap.clear();</span>
+<span class="fc" id="L77">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
