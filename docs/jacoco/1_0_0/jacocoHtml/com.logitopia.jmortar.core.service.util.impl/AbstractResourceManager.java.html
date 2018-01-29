@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractResourceManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jmortar-core-service</a> &gt; <a href="index.source.html" class="el_package">com.logitopia.jmortar.core.service.util.impl</a> &gt; <span class="el_source">AbstractResourceManager.java</span></div><h1>AbstractResourceManager.java</h1><pre class="source lang-java linenums">/*
+ *     JMortar - Tools to make your Java life easier.
+ *     Copyright (C) 2015-2018 Stephen Cheesley
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+package com.logitopia.jmortar.core.service.util.impl;
+
+import com.logitopia.jmortar.core.service.util.ResourceManager;
+
+/**
+ * The &lt;tt&gt;AbstractResourceManager&lt;/tt&gt; class is an abstract implementation that
+ * implements the getters and setters for the resource manager.
+ *
+ * @author Stephen Cheesley &amp;lt;stephen.cheesley@gmail.com&amp;gt;
+ */
+<span class="fc" id="L28">public class AbstractResourceManager&lt;T&gt; implements ResourceManager&lt;T&gt; {</span>
+
+  /**
+   * The resource being managed.
+   */
+  private T resource;
+  
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public T getResource() {
+<span class="fc" id="L40">    return resource;</span>
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void setResource(final T newResource) {
+<span class="fc" id="L48">    resource = newResource;</span>
+<span class="fc" id="L49">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

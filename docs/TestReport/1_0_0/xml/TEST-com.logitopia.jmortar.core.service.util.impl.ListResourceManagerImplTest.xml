@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.logitopia.jmortar.core.service.util.impl.ListResourceManagerImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-01-29T21:55:16" hostname="DESKTOP-2PUINBP" time="0.003">
+  <properties/>
+  <testcase name="testAddResource" classname="com.logitopia.jmortar.core.service.util.impl.ListResourceManagerImplTest" time="0.002"/>
+  <testcase name="testRemoveResource" classname="com.logitopia.jmortar.core.service.util.impl.ListResourceManagerImplTest" time="0.0"/>
+  <testcase name="testResetResources" classname="com.logitopia.jmortar.core.service.util.impl.ListResourceManagerImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2018-01-29 21:55:16,416 INFO  - Test add resource to list.
+2018-01-29 21:55:16,432 INFO  - Test remove resource from list.
+2018-01-29 21:55:16,432 INFO  - Test reset resource from list.
+]]></system-err>
+</testsuite>

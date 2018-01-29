@@ -1,0 +1,5 @@
+com.logitopia.jmortar.core.service
+com.logitopia.jmortar.core.service.exception
+com.logitopia.jmortar.core.service.impl
+com.logitopia.jmortar.core.service.util
+com.logitopia.jmortar.core.service.util.impl

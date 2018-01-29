@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.logitopia.jmortar.core.service.util.impl.BasicResourceManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-29T21:55:16" hostname="DESKTOP-2PUINBP" time="0.002">
+  <properties/>
+  <testcase name="testGetterAndSetter" classname="com.logitopia.jmortar.core.service.util.impl.BasicResourceManagerTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2018-01-29 21:55:16,416 INFO  - Test the getter and setter.
+]]></system-err>
+</testsuite>
