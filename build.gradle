@@ -50,7 +50,7 @@ bintray {
     key = bintrayKey
     pkg {
         repo = 'jmortar-release'
-        name = 'jmortar-core-object'
+        name = 'jmortar-core-service'
         userOrg = 'logitopia'
         publications = ['publishToBintray']
     }
